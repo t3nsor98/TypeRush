@@ -3,8 +3,11 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+const API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
+
 const firebaseConfig = {
-  apiKey: "AIzaSyDALq07VLLIJ9pl6ERH2WWMxHrrrC0VSQc",
+  apiKey: API_KEY,
   authDomain: "typerush-fd843.firebaseapp.com",
   projectId: "typerush-fd843",
   storageBucket: "typerush-fd843.firebasestorage.app",
