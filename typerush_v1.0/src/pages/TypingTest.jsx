@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { doc, updateDoc, arrayUnion, getDoc } from "firebase/firestore";
-import { db } from "../libs/firebase";
+import { db } from "../firebase/firebase";
 import { useAuth } from "../context/AuthContext";
+import VirtualKeyboard from "../components/VirtualKeyboard";
 
 // Sample text for different difficulty levels
 const textOptions = {
@@ -39,9 +40,25 @@ const TypingTest = () => {
   const [wpm, setWpm] = useState(0);
   const [accuracy, setAccuracy] = useState(0);
   const [isHighScore, setIsHighScore] = useState(false);
+  const [currentKey, setCurrentKey] = useState(null);
 
   const inputRef = useRef(null);
   const timerRef = useRef(null);
+
+  const handleInputChange = (e) => {
+    if (testActive) {
+      const input = e.target.value;
+      setUserInput(input);
+
+      // Set the current key for the virtual keyboard
+      if (input.length > 0) {
+        setCurrentKey(input[input.length - 1]);
+      }
+      if (input.length > 0) {
+        setCurrentKey(input[input.length - 1]);
+      }
+    }
+  };
 
   // Get random text based on difficulty
   useEffect(() => {
@@ -123,12 +140,6 @@ const TypingTest = () => {
     }
   };
 
-  const handleInputChange = (e) => {
-    if (testActive) {
-      setUserInput(e.target.value);
-    }
-  };
-
   return (
     <div className="container mx-auto px-4 py-8 max-w-3xl">
       <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">
@@ -200,6 +211,7 @@ const TypingTest = () => {
                 </span>
               );
             })}
+            <VirtualKeyboard currentKey={currentKey} />
           </div>
 
           <textarea

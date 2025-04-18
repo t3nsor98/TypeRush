@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { doc, getDoc } from "firebase/firestore";
-import { db } from "../libs/firebase";
+import { db } from "../firebase/firebase";
 import {
   Chart as ChartJS,
   CategoryScale,

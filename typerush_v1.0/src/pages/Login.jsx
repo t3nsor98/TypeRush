@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { doc, getDoc, setDoc, serverTimestamp } from "firebase/firestore";
-import { auth, db } from "../libs/firebase";
+import { auth, db } from "../firebase/firebase";
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
