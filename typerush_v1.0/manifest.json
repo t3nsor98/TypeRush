@@ -1,0 +1,47 @@
+{
+  "name": "TypeRush - Typing Speed Test App",
+  "short_name": "TypeRush",
+  "description": "Improve your typing speed and accuracy with interactive typing tests and comprehensive performance tracking",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#ffffff",
+  "theme_color": "#3498db",
+  "icons": [
+    {
+      "src": "android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+
+  "categories": ["productivity", "education", "utilities"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "shortcuts": [
+    {
+      "name": "Quick Test",
+      "short_name": "Test",
+      "description": "Start a new typing test",
+      "url": "/test",
+      "icons": [{ "src": "icons/test-icon-96x96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "My Profile",
+      "short_name": "Profile",
+      "description": "View your typing statistics",
+      "url": "/profile",
+      "icons": [{ "src": "icons/profile-icon-96x96.png", "sizes": "96x96" }]
+    }
+  ],
+  "scope": "/",
+  "id": "typerush-typing-app",
+  "iarc_rating_id": "",
+  "author": "Digbijaya Lenka",
+  "homepage_url": "https://typerush.app"
+}
