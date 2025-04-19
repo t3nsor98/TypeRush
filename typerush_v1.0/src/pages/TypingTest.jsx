@@ -10,14 +10,68 @@ const textOptions = {
   easy: [
     "The quick brown fox jumps over the lazy dog. Simple words are often the most powerful ones in our vocabulary.",
     "Learning to type quickly is an essential skill in today's digital world. Practice makes perfect.",
+    "Simple sentences help beginners learn faster. Practice daily to become a better typist.",
+    "Reading helps improve vocabulary and typing skills. Simple sentences help beginners learn faster.",
+    "Practice daily to become a better typist. Short words are easier to remember and type. Simple sentences help beginners learn faster.",
+    "Short words are easier to remember and type. Typing regularly improves your speed and accuracy.",
+    "Reading helps improve vocabulary and typing skills. Simple sentences help beginners learn faster. Short words are easier to remember and type.",
+    "Typing regularly improves your speed and accuracy. Reading helps improve vocabulary and typing skills. Practice daily to become a better typist.",
+    "Practice daily to become a better typist. Reading helps improve vocabulary and typing skills. Typing regularly improves your speed and accuracy.",
+    "Reading helps improve vocabulary and typing skills. Practice daily to become a better typist. Short words are easier to remember and type.",
+    "Simple sentences help beginners learn faster. Short words are easier to remember and type. Reading helps improve vocabulary and typing skills.",
+    "Typing regularly improves your speed and accuracy. Simple sentences help beginners learn faster. Practice daily to become a better typist.",
+    "Short words are easier to remember and type. Simple sentences help beginners learn faster. Reading helps improve vocabulary and typing skills.",
+    "Practice daily to become a better typist. Typing regularly improves your speed and accuracy.",
+    "Reading helps improve vocabulary and typing skills. Typing regularly improves your speed and accuracy. Simple sentences help beginners learn faster.",
+    "Short words are easier to remember and type. Reading helps improve vocabulary and typing skills. Simple sentences help beginners learn faster.",
+    "Simple sentences help beginners learn faster. Typing regularly improves your speed and accuracy.",
+    "Typing regularly improves your speed and accuracy. Short words are easier to remember and type.",
+    "Practice daily to become a better typist. Simple sentences help beginners learn faster. Typing regularly improves your speed and accuracy.",
+    "Reading helps improve vocabulary and typing skills. Typing regularly improves your speed and accuracy. Short words are easier to remember and type.",
   ],
   medium: [
     "The ability to type without looking at the keyboard is called touch typing. Professional typists can reach speeds of over 100 words per minute.",
     "Developing muscle memory is crucial for typing efficiency. Your fingers should automatically know where each key is located.",
+    "Ergonomic keyboards can reduce strain during long typing sessions. Touch typing allows you to focus on the screen instead of the keyboard. Consistent practice leads to muscle memory development. Proper posture is important for typing comfort and health.",
+    "Typing tests can help track your progress over time. Ergonomic keyboards can reduce strain during long typing sessions. Proper posture is important for typing comfort and health. Consistent practice leads to muscle memory development.",
+    "Consistent practice leads to muscle memory development. Touch typing allows you to focus on the screen instead of the keyboard.",
+    "Proper posture is important for typing comfort and health. Typing tests can help track your progress over time.",
+    "Typing tests can help track your progress over time. Touch typing allows you to focus on the screen instead of the keyboard. Ergonomic keyboards can reduce strain during long typing sessions.",
+    "Proper posture is important for typing comfort and health. Consistent practice leads to muscle memory development. Touch typing allows you to focus on the screen instead of the keyboard.",
+    "Ergonomic keyboards can reduce strain during long typing sessions. Proper posture is important for typing comfort and health. Typing tests can help track your progress over time.",
+    "Touch typing allows you to focus on the screen instead of the keyboard. Typing tests can help track your progress over time. Proper posture is important for typing comfort and health.",
+    "Consistent practice leads to muscle memory development. Ergonomic keyboards can reduce strain during long typing sessions.",
+    "Proper posture is important for typing comfort and health. Ergonomic keyboards can reduce strain during long typing sessions. Touch typing allows you to focus on the screen instead of the keyboard.",
+    "Typing tests can help track your progress over time. Consistent practice leads to muscle memory development.",
+    "Touch typing allows you to focus on the screen instead of the keyboard. Proper posture is important for typing comfort and health. Ergonomic keyboards can reduce strain during long typing sessions.",
+    "Consistent practice leads to muscle memory development. Proper posture is important for typing comfort and health. Typing tests can help track your progress over time.",
+    "Touch typing allows you to focus on the screen instead of the keyboard. Typing tests can help track your progress over time. Consistent practice leads to muscle memory development.",
+    "Ergonomic keyboards can reduce strain during long typing sessions. Consistent practice leads to muscle memory development. Typing tests can help track your progress over time.",
+    "Consistent practice leads to muscle memory development. Typing tests can help track your progress over time. Ergonomic keyboards can reduce strain during long typing sessions.",
+    "Proper posture is important for typing comfort and health. Touch typing allows you to focus on the screen instead of the keyboard.",
+    "Ergonomic keyboards can reduce strain during long typing sessions. Typing tests can help track your progress over time.",
   ],
   hard: [
     "The QWERTY keyboard layout was designed in 1868 by Christopher Latham Sholes. Interestingly, it was created to slow typists down to prevent jamming on mechanical typewriters.",
     "Pneumonoultramicroscopicsilicovolcanoconiosis is one of the longest words in the English dictionary. It refers to a lung disease caused by inhaling very fine silicate or quartz dust.",
+    "Mechanical typewriters influenced the design of modern keyboards. Understanding keyboard layouts can improve typing efficiency.",
+    "Understanding keyboard layouts can improve typing efficiency. Mechanical typewriters influenced the design of modern keyboards. The longest word in English is often debated among linguists.",
+    "Advanced typists can type complex texts with high accuracy. Specialized vocabulary is common in technical and scientific writing.",
+    "The longest word in English is often debated among linguists. Specialized vocabulary is common in technical and scientific writing. Understanding keyboard layouts can improve typing efficiency.",
+    "Specialized vocabulary is common in technical and scientific writing. Understanding keyboard layouts can improve typing efficiency. Mechanical typewriters influenced the design of modern keyboards.",
+    "Advanced typists can type complex texts with high accuracy. The longest word in English is often debated among linguists.",
+    "Mechanical typewriters influenced the design of modern keyboards. Advanced typists can type complex texts with high accuracy. Understanding keyboard layouts can improve typing efficiency.",
+    "Specialized vocabulary is common in technical and scientific writing. The longest word in English is often debated among linguists. Advanced typists can type complex texts with high accuracy.",
+    "Understanding keyboard layouts can improve typing efficiency. Advanced typists can type complex texts with high accuracy. Specialized vocabulary is common in technical and scientific writing.",
+    "The longest word in English is often debated among linguists. Mechanical typewriters influenced the design of modern keyboards. Understanding keyboard layouts can improve typing efficiency.",
+    "Mechanical typewriters influenced the design of modern keyboards. Specialized vocabulary is common in technical and scientific writing. The longest word in English is often debated among linguists.",
+    "Understanding keyboard layouts can improve typing efficiency. The longest word in English is often debated among linguists.",
+    "Advanced typists can type complex texts with high accuracy. Understanding keyboard layouts can improve typing efficiency.",
+    "The longest word in English is often debated among linguists. Advanced typists can type complex texts with high accuracy.",
+    "Specialized vocabulary is common in technical and scientific writing. Mechanical typewriters influenced the design of modern keyboards. Advanced typists can type complex texts with high accuracy.",
+    "Mechanical typewriters influenced the design of modern keyboards. The longest word in English is often debated among linguists. Advanced typists can type complex texts with high accuracy.",
+    "Understanding keyboard layouts can improve typing efficiency. Specialized vocabulary is common in technical and scientific writing.",
+    "Advanced typists can type complex texts with high accuracy. Mechanical typewriters influenced the design of modern keyboards.",
   ],
 };
 
@@ -64,7 +118,12 @@ const TypingTest = () => {
   useEffect(() => {
     const options = textOptions[difficulty];
     const randomIndex = Math.floor(Math.random() * options.length);
-    setText(options[randomIndex]);
+    const randomIndex2 = Math.floor(Math.random() * options.length);
+    const randomIndex3 = Math.floor(Math.random() * options.length);
+    const randomIndex4 = Math.floor(Math.random() * options.length);
+    const randomIndex5 = Math.floor(Math.random() * options.length);
+    const finalText = `${options[randomIndex]} ${options[randomIndex2]} ${options[randomIndex3]} ${options[randomIndex4]} ${options[randomIndex5]}`;
+    setText(finalText);
   }, [difficulty]);
 
   // Timer functionality
@@ -86,7 +145,9 @@ const TypingTest = () => {
     setTestActive(true);
     setTestComplete(false);
     setStartTime(Date.now());
-    inputRef.current.focus();
+    setTimeout(() => {
+      inputRef.current.focus();
+    }, 0);
   };
 
   const endTest = async () => {
